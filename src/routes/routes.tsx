@@ -4,7 +4,7 @@ import { lazy } from "react";
 interface IPages {
   type: "create" | "edit" | "show";
   pathName: string;
-  component: React.ComponentType;
+  component?: React.ComponentType;
   isVisible: boolean;
 }
 
@@ -16,7 +16,7 @@ interface IRoutes {
 }
 [];
 
-const TaskContainer = lazy(() => import("@/pages/taskManager/taskContainer"));
+// const TaskContainer = lazy(() => import("@/pages/"));
 
 export const routeList: IRoutes[] = [
   {
@@ -28,7 +28,7 @@ export const routeList: IRoutes[] = [
         type: "create",
         isVisible: false,
         pathName: "/taskManager/create",
-        component: TaskContainer,
+        // component: TaskContainer,
       },
     ],
   },
